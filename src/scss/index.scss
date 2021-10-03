@@ -1,0 +1,93 @@
+
+//@import "~normalize-scss/sass/normalize";
+//@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+$font-stack:    'Rubik', sans-serif;
+$_fs_base: 18px;
+$_wegth_ligth: 300;
+$_wegth_normal: 400;
+$_wegth_bold: 500;
+$_bord_rad: 1rem;
+$_bord_rad_fool: 50%;
+///
+$_blue_100: hsl(195, 74%, 62%);
+$_blue_200: hsl(236, 100%, 87%);
+$_blue_400: hsl(235, 45%, 61%);
+$_blue_500:  hsl(246, 80%, 60%);
+$_blue_800:  hsl(235, 46%, 20%);
+$_blue_900:  hsl(226, 43%, 10%);
+$_red_100: hsl(15, 100%, 70%);
+$_red_200:  hsl(348, 100%, 68%);
+$_green_100:hsl(145, 58%, 55%);
+$_violet_500: hsl(264, 64%, 52%);
+$_orang_100: hsl(43, 84%, 65%);
+
+body{
+  background-color: $_blue_900;
+  font-family: $font-stack;
+  font-size: $_fs_base;
+  color: #ffffff;
+}
+
+.dashboard{
+  min-height: 100vh;
+  padding: 4rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+};
+.dashboard_content{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  grid-template-columns: repeat(1, 300px, 330px);
+  .dashboard__person{
+    width: 100%;
+    background-color: $_blue_800;
+    border-radius: $_bord_rad;
+    .info-card{
+      background-color: $_blue_500;
+      border-radius: $_bord_rad;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      .info-card__pfoto{
+        width: 50px;
+        height: 50px;
+        border: 3px solid white;
+        border-radius: $_bord_rad_fool;
+        .info-card__text{
+          .info-card__subtitle{
+            font-weight: $_wegth_ligth;
+            margin:  0;
+            font-size: 12px;
+          }
+          .info-card__title{
+            font-weight: $_wegth_ligth;
+            margin: 0.5rem 0 0;
+          }
+        }
+
+      }
+    }
+    .wiev__selector{
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      .wiev__selector-item{
+        font-size: 12px;
+        color: $_blue_200;
+        cursor: pointer;
+        &:hover{
+          color: white;
+        }
+        &.wiev__selector-item--active{
+          color: white;
+        }
+      }
+    }
+  }
+}
