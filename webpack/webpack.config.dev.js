@@ -1,8 +1,7 @@
 const Path = require('path');
 const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
-
-
+const data = require('../data.json');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -14,11 +13,26 @@ module.exports = merge(common, {
 	},
 	devServer: {
 		historyApiFallback: true,
-		static: '../build',
+		//static: '../build',
+		 static: {
+		 	directory: Path.join(__dirname, 'public'),
+		 },
+		 allowedHosts: 'all',
 		open: true,
 		hot: true,
 		compress: true,
 		port: 9000,
+		onBeforeSetupMiddleware: function (devServer) {
+			if (!devServer) {
+			  throw new Error('webpack-dev-server is not defined');
+			}
+	  
+			devServer.app.get('/data', function (req, res) {
+			  res.json(data);
+			});
+		  },
+	
+
 	},
 	plugins: [
 		new Webpack.DefinePlugin({
@@ -32,12 +46,14 @@ module.exports = merge(common, {
 				loader: 'html-loader',
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				test: /\.(png|svg|jpg|jpeg|gif|json)$/i,
 				type: 'asset/resource',
 			},
 			{
 				test: /\.js$/,
+				exclude: /node_modules/,
 				include: Path.resolve(__dirname, '../src'),
+				
 				loader: 'babel-loader',
 			},
 			{

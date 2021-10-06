@@ -1,6 +1,6 @@
 
-//@import "~normalize-scss/sass/normalize";
-//@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import "~normalize-scss/sass/normalize";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 $font-stack:    'Rubik', sans-serif;
 $_fs_base: 18px;
 $_wegth_ligth: 300;
@@ -26,6 +26,9 @@ body{
   font-family: $font-stack;
   font-size: $_fs_base;
   color: #ffffff;
+  .attribution{
+    text-align: center;
+  }
 }
 
 .dashboard{
@@ -42,7 +45,7 @@ body{
   display: grid;
   gap: 1.5rem;
   justify-content: center;
-  grid-template-columns: repeat(1, 300px, 330px);
+  grid-template-columns: repeat(1,minmax 300px, 330px);
   .dashboard__person{
     width: 100%;
     background-color: $_blue_800;
@@ -90,4 +93,115 @@ body{
       }
     }
   }
+  .dashboard__item{
+    width: 100%;
+    padding-top: 2.15rem;
+    background-color: white;
+    border-radius: $_bord_rad;
+    background-repeat: no-repeat;
+    background-position: 92% -8%;
+    .tracing-card{
+      height: 73%;
+      background-color: $_blue_800;
+      border-radius: $_bord_rad;
+  
+      padding: 1.25rem;
+      position: relative;
+      bottom: -2px;
+      img{
+        height: 5px;
+      }
+    }
+    &:hover{
+      .tracing-card{
+        background-color: $_blue_500;
+      }
+    }
+  }
+  .dashboard__item--work{
+    background-color: $_red_100;
+    background-image: url('../img/icon-work.svg');
+    
+  }
+  .dashboard__item--play{
+    background-color: $_blue_100;
+    background-image: url('../img/icon-play.svg');
+  }
+  .dashboard__item--study{
+    background-color: $_red_200;
+    background-image: url('../img/icon-study.svg');
+  }
+  .dashboard__item--exercise{
+    background-color: $_green_100;
+    background-image: url('../img/icon-exercise.svg');
+  }
+  .dashboard__item--social{
+    background-color: $_violet_500;
+    background-image: url('../img/icon-social.svg');
+  }
+  .dashboard__item--self-care{
+    background-color: $_orang_100;
+    background-image: url('../img/icon-self-care.svg');
+  }
 }
+@media (min-width: 1024px) {
+  .dashboard_content{
+    grid-template-columns: repeat(4, 1fr);
+    .dashboard__person{
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .info-card{
+        flex-direction: column;
+        align-items: flex-start;
+        flex-grow: 1;
+        justify-content: flex-start;
+        .info-card__pfoto{
+          margin-bottom: 1.5rem;
+        }
+        .info-card__title{
+          font-size: 30px;
+          margin: 0;
+        }
+      }
+      .wiev__selector{
+        flex-direction: column;
+        .wiev__selector-item:not(:last-child){
+           margin-bottom: 1rem;
+         }
+      }
+    }
+    .dashboard__item{
+      .tracing-card{
+        bottom: -8px;
+        .tracing-card__header{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 2rem;
+          .trecing-card__title{
+            margin: 0;
+      
+          }
+        }
+        .tracking-card__body {
+            flex-direction: column;
+            align-items: flex-start;
+            
+           
+            .tracking-card__time {
+              margin-bottom: 0.75rem;
+              font-size: 48px;
+          }
+        
+        }
+      }
+    }
+   
+  }
+}
+//40min
