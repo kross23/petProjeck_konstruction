@@ -51,9 +51,8 @@ module.exports = merge(common, {
 			},
 			{
 				test: /\.js$/,
-				exclude: /node_modules/,
+			//exclude: /node_modules/,
 				include: Path.resolve(__dirname, '../src'),
-				
 				loader: 'babel-loader',
 			},
 			{
