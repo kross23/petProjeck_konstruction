@@ -1,6 +1,6 @@
-import '../scss/index.scss';
+import '../assets/scss/index.scss';
 //import '../index.html';
-if (process.env.NODE_ENV === 'development') {	
+if (process.env.NODE_ENV === 'development') {
 	require('../index.html');
 }
 

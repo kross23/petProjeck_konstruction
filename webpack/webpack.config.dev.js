@@ -14,25 +14,22 @@ module.exports = merge(common, {
 	devServer: {
 		historyApiFallback: true,
 		//static: '../build',
-		 static: {
-		 	directory: Path.join(__dirname, 'public'),
-		 },
-		 allowedHosts: 'all',
+		static: {
+			directory: Path.join(__dirname, 'public'),
+		},
+		allowedHosts: 'all',
 		open: true,
 		hot: true,
 		compress: true,
 		port: 9000,
 		onBeforeSetupMiddleware: function (devServer) {
 			if (!devServer) {
-			  throw new Error('webpack-dev-server is not defined');
+				throw new Error('webpack-dev-server is not defined');
 			}
-	  
 			devServer.app.get('/data', function (req, res) {
-			  res.json(data);
+				res.json(data);
 			});
-		  },
-	
-
+		},
 	},
 	plugins: [
 		new Webpack.DefinePlugin({

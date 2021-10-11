@@ -18,7 +18,7 @@ module.exports = {
 		},
 	},
 	plugins: [
-		new CopyWebpackPlugin({ patterns: [{ from: Path.resolve(__dirname, '../src/img'), to: '../build/img' }] }),
+		//new CopyWebpackPlugin({ patterns: [{ from: Path.resolve(__dirname, '../src/assets/icon'), to: '../build/img' }] }),
 		new HtmlWebpackPlugin({
 			template: Path.resolve(__dirname, '../src/index.html'),
 		}),
@@ -35,8 +35,6 @@ module.exports = {
 				include: /node_modules/,
 				type: 'javascript/auto',
 			},
-
-
 		],
 	},
 };
