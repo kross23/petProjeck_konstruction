@@ -10,10 +10,10 @@ module.exports = merge(common, {
 	devtool: 'eval-cheap-source-map',
 	output: {
 		chunkFilename: 'js/[name].chunk.js',
+		publicPath: '',
 	},
 	devServer: {
 		historyApiFallback: true,
-		//static: '../build',
 		static: {
 			directory: Path.join(__dirname, 'public'),
 		},
@@ -30,6 +30,10 @@ module.exports = merge(common, {
 				res.json(data);
 			});
 		},
+	},
+	stats: {
+		//all: undefined,
+		children: true
 	},
 	plugins: [
 		new Webpack.DefinePlugin({
@@ -48,7 +52,7 @@ module.exports = merge(common, {
 			},
 			{
 				test: /\.js$/,
-			//exclude: /node_modules/,
+				exclude: /node_modules/,
 				include: Path.resolve(__dirname, '../src'),
 				loader: 'babel-loader',
 			},
@@ -66,3 +70,4 @@ module.exports = merge(common, {
 		],
 	},
 });
+

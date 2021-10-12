@@ -1,7 +1,7 @@
 const Path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 module.exports = {
 	entry: {
 		app: Path.resolve(__dirname, '../src/js/main.js'),
@@ -11,6 +11,10 @@ module.exports = {
 		filename: 'js/[name].js',
 		clean: true,
 	},
+	stats: {
+		//all: undefined,
+		children: true
+	},
 	optimization: {
 		splitChunks: {
 			chunks: 'all',
@@ -19,9 +23,17 @@ module.exports = {
 	},
 	plugins: [
 		//new CopyWebpackPlugin({ patterns: [{ from: Path.resolve(__dirname, '../src/assets/icon'), to: '../build/img' }] }),
+		// new HtmlWebpackPlugin({
+		// 	template: Path.resolve(__dirname, '../src/index.html'),
+		// }),
 		new HtmlWebpackPlugin({
-			template: Path.resolve(__dirname, '../src/index.html'),
-		}),
+			template: Path.resolve(__dirname, '../src/index.pug'),
+			filename: 'index.html',
+			minify: false
+		  }),
+		new HtmlWebpackPugPlugin({
+			adjustIndent: true
+		  }),
 	],
 	resolve: {
 		alias: {
@@ -35,6 +47,13 @@ module.exports = {
 				include: /node_modules/,
 				type: 'javascript/auto',
 			},
+			{
+				test: /\.pug$/,
+				loader: 'pug-loader',
+				options: {
+					pretty: true
+				}
+			}
 		],
 	},
 };
