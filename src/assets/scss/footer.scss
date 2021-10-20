@@ -1,0 +1,36 @@
+footer{
+    color: #C2C2C2;
+    background: #101012;
+}
+.footer{ 
+    margin: 0 auto;
+    padding: 7rem 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    //align-items: center;
+    max-width: 144rem;
+    padding-left:1.5rem ;
+    padding-right:1.5rem ;
+    &-item{
+        margin-bottom: 2rem;
+
+    }
+        &-list{
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+
+            &__item{
+
+                margin-bottom: 1rem;
+            }
+            &__link{
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #C2C2C2;
+                text-decoration: none;
+                
+            }
+        }
+    
+}

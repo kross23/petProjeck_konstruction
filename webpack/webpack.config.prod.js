@@ -3,12 +3,17 @@ const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common.js');
+const Path = require('path');
 
 module.exports = merge(common, {
 	mode: 'production',
 	devtool: 'source-map',
 	//stats: 'errors-only',
 	bail: true,
+	stats: {
+		//all: undefined,
+		children: true
+	},
 	output: {
 		filename: 'js/[name].[chunkhash:8].js',
 		chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
@@ -38,17 +43,10 @@ module.exports = merge(common, {
 				test: /\.html$/i,
 				loader: "html-loader",
 			},
-			// {
-			//   test: /\.(png|svg|jpg|jpeg|gif)$/i,
-			//   use: [
-			//     {
-			//       loader: 'file-loader',
-			//       options: {
-			//         name: '[path][name].[ext]',
-			//       },
-			//     },
-			//   ],
-			// }
+			{
+				test: /\.(png|svg|jpg|jpeg|gif|json)$/i,
+				type: 'asset/resource',
+			},
 		],
 	},
 });

@@ -3,7 +3,12 @@ const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const data = require('../data.json');
 const common = require('./webpack.common.js');
-
+const PATHS = {
+	src: Path.join(__dirname, '../src'),
+	dist: Path.join(__dirname, '../dist'),
+	assets: Path.join(__dirname, '../src/assets')
+	
+  };
 module.exports = merge(common, {
 	target: 'web',
 	mode: 'development',
@@ -21,6 +26,8 @@ module.exports = merge(common, {
 		open: true,
 		hot: true,
 		compress: true,
+		host: '192.168.0.101',
+		//host :local-ip,
 		port: 9000,
 		onBeforeSetupMiddleware: function (devServer) {
 			if (!devServer) {
@@ -50,6 +57,14 @@ module.exports = merge(common, {
 				test: /\.(png|svg|jpg|jpeg|gif|json)$/i,
 				type: 'asset/resource',
 			},
+			// {
+			// 	// images / icons
+			// 	test: /\.(png|jpg|gif|svg)$/,
+			// 	loader: 'file-loader',
+			// 	options: {
+			// 		name: '[name].[ext]'
+			// 	}
+			// },
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
@@ -62,6 +77,9 @@ module.exports = merge(common, {
 					'style-loader',
 					{
 						loader: 'css-loader',
+						// options: {
+						// 	url: false,
+						// }
 					},
 					'postcss-loader',
 					'sass-loader',

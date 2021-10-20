@@ -12,7 +12,7 @@ module.exports = {
 		clean: true,
 	},
 	stats: {
-		//all: undefined,
+		//all: true,
 		children: true
 	},
 	optimization: {
@@ -30,16 +30,18 @@ module.exports = {
 			template: Path.resolve(__dirname, '../src/index.pug'),
 			filename: 'index.html',
 			minify: false
-		  }),
+		}),
 		new HtmlWebpackPugPlugin({
 			adjustIndent: true
-		  }),
+		}),
 	],
 	resolve: {
 		alias: {
 			'~': Path.resolve(__dirname, '../src'),
+			extensions: ['.js', '.jsx', '.scss']
 		},
 	},
+
 	module: {
 		rules: [
 			{
@@ -51,9 +53,10 @@ module.exports = {
 				test: /\.pug$/,
 				loader: 'pug-loader',
 				options: {
-					pretty: true
+					pretty: true,
+					//esModule: false,
 				}
-			}
+			},
 		],
 	},
 };
