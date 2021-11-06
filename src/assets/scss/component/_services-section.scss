@@ -1,0 +1,103 @@
+.services-section{
+    background-image: url(./../img/services-section.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 21.2rem;
+    padding-bottom: 5rem;
+    &__learn{
+        @include flex-all-center;
+        padding-top: 8.5rem;
+        padding-bottom: 3.5rem;
+    }
+    &__subtitle{
+        font-weight: 700;
+        font-size: 2.8rem;
+        line-height: 150%;
+        margin: 0;
+        padding-right: 4rem;
+        color: var(--color-ebony);
+    }
+  
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    .services-list__item{
+        background: #FFFFFF;
+        &:hover{
+        
+          
+            .services-item{
+                &::before{
+                    opacity: 1;
+                }
+                svg{
+                    fill: var(--color-light);
+                }
+                &__title{
+                    color: var(--color-light);
+                }
+            }
+       
+                
+            
+        }
+    }
+}
+.services-item{
+    @include flex-column-center;
+    padding: 7rem 1rem;
+
+    border-radius: 4px;
+    position: relative;
+    
+    border: 1px solid #e5e8ed;
+   
+    box-shadow: 
+    0px 80px 80px -20px 
+    rgba(154, 156, 165, 0.08), 0px 30px 24px -10px 
+    rgba(154, 156, 165, 0.05), 0px 12px 10px -6px 
+    rgba(154, 156, 165, 0.04), 0px 4px 4px -4px 
+    rgba(30, 33, 44, 0.03);
+    background: var(--color-ligth);
+    z-index: 10;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0; 
+        background-image: url(./../services/image.png);
+        border-radius: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+    }
+    svg{
+        width: 5.2rem;
+        height: 5.2rem;
+        object-fit: cover;
+        fill: var(--color-primary);
+        transition: fill .2s ease-in-out;
+        &:hover{
+            fill: var(--color-light);
+        }
+
+    }
+    &__title{
+        margin: 0;
+        padding-top: 2.5rem;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height:150%;
+        text-align: center;
+        color: var(--color-ebony);   
+        transition: color .3s ease-in-out; 
+    }
+   
+}

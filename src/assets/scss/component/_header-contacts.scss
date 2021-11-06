@@ -1,0 +1,34 @@
+.header-contacts{
+    @include flex-v-center;
+    &__link{
+       @include flex-column-start;
+       &:not(:last-child){
+        margin-right: 3.5rem;
+       }
+    }
+
+    .contacts-link{
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 4rem 4rem;
+        padding-left: 5.3rem;
+        color: var(--color-gray);
+        &__caption{
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 150%;
+           // color: var(--color-gray);
+        }
+        &__value{
+            font-size: 1.8rem;
+            line-height: 150%;
+
+        }
+        &--call{
+            background-image: url(./../svg/pfone.svg);
+        }
+        &--mail{
+            background-image: url(./../svg/chat.svg);
+        }
+    }
+}

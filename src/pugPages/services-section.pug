@@ -1,0 +1,37 @@
+
+
+mixin svg(svg_url, svg_id)
+  if svg_id
+    svg()&attributes(attributes)
+      use(xlink:href= (svg_url) + '#' + svg_id)
+  else
+    svg()&attributes(attributes)
+      use(xlink:href = (svg_url))
+
+section.services-section.section-offset 
+    .container 
+        h2.title.title--center Our services
+        p.descr.descr--center Createx Construction Bureau is&nbsp;a&nbsp;construction giant with a&nbsp;full range of&nbsp;construction services.
+        ul.services-list.list-reset
+            li.services-list__item
+                a(href="#").services-item
+                    include ../assets/services/ic-construction.svg
+                    h3.services-item__title Construction
+            li.services-list__item
+                a(href="#").services-item
+                    include ../assets/services/ic-plan.svg
+                    h3.services-item__title Project Development
+            li.services-list__item
+                a(href="#").services-item
+                    include ../assets/services/ic-pantone.svg
+                    h3.services-item__title Interior Design           
+            li.services-list__item
+                a(href="#").services-item
+                    include ../assets/services/ic-painting.svg
+                    h3.services-item__title Repairs 
+        .services-section__learn 
+            h4.services-section__subtitle Learn more about our services
+            button.btn-reset.services-section__btn.btn.btn--fill View services
+
+
+

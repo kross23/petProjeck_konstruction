@@ -1,14 +1,14 @@
 {
   "name": "webpack-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "marafon",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
     "dev": "webpack serve --config webpack/webpack.config.dev.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "kross",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.5",

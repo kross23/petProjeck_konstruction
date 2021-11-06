@@ -26,7 +26,7 @@ module.exports = merge(common, {
 		open: true,
 		hot: true,
 		compress: true,
-		host: '192.168.0.101',
+		//host: '192.168.0.101',
 		//host :local-ip,
 		port: 9000,
 		onBeforeSetupMiddleware: function (devServer) {
@@ -50,22 +50,6 @@ module.exports = merge(common, {
 	module: {
 		rules: [
 			{
-				test: /\.html$/i,
-				loader: 'html-loader',
-			},
-			{
-				test: /\.(png|svg|jpg|jpeg|gif|json)$/i,
-				type: 'asset/resource',
-			},
-			// {
-			// 	// images / icons
-			// 	test: /\.(png|jpg|gif|svg)$/,
-			// 	loader: 'file-loader',
-			// 	options: {
-			// 		name: '[name].[ext]'
-			// 	}
-			// },
-			{
 				test: /\.js$/,
 				exclude: /node_modules/,
 				include: Path.resolve(__dirname, '../src'),
@@ -77,9 +61,6 @@ module.exports = merge(common, {
 					'style-loader',
 					{
 						loader: 'css-loader',
-						// options: {
-						// 	url: false,
-						// }
 					},
 					'postcss-loader',
 					'sass-loader',

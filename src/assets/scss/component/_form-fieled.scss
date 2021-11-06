@@ -1,0 +1,38 @@
+.know-form{
+    &__field{
+        @include flex-column-start;
+
+    }
+    .form-field{
+        &--big{
+          flex-grow: 2;
+          .form-field__input{
+              width: 100%;
+          }
+        }
+
+        &__caption{
+            font-size: 1.4rem;
+            line-height: 150%;
+            color: var(--color-gray);
+        }
+    &__input{
+        background-color: #d7d7d7;
+        border:1px solid #D7DADD ;
+        width: 20.6rem;
+        height: 4.4rem;
+        font-size: 14px;
+        line-height: 150%;
+        border-radius: .4rem;
+        padding-left: 1.6rem;
+        text-transform: lowercase;
+        &::placeholder{
+            font-size: 14px;
+            line-height: 150%;
+            
+      }
+    }
+
+
+    }
+}

@@ -1,0 +1,24 @@
+@font-face {
+        font-family: 'Ubuntu';
+        src : url("./fonts/Ubuntu-Regular.woff2");
+        font-weight: 400;
+        font-style: normal;
+        };
+@font-face {
+        font-family: 'Ubuntu';
+        src: url('./fonts/Ubuntu-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: bold;
+      };
+@font-face {
+        font-family: "Lato";
+        src : url("./fonts/Lato-Bold.woff2") format("woff2");
+        font-style: bold;
+        font-weight: 700;
+        };
+@font-face {
+        font-family: "lato";
+        src : url("./fonts/Lato-Black.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 900; 
+        };

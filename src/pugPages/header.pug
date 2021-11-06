@@ -1,22 +1,23 @@
-header 
-    .header 
-        a(href="#")
-            img(src=require("../assets/svg/Logo1.svg"), alt="logo")
-        nav 
-            ul.nav 
-                li.nav-item 
-                    a(href="#").nav-link.active Home
-                li.nav-item 
-                    a(href="#").nav-link TV Shows
-                li.nav-item 
-                    a(href="#").nav-link Movies
-                li.nav-item 
-                    a(href="#").nav-link Series
-        ul.control 
-            li.control-item 
-                button.control-btn.control-btn_search 
-            li.control-item 
-                button.control-btn.control-btn_notice
-            li.control-item 
-                button.control-btn.control-btn_account
-    
+header.header.header--main
+  .container.header__container
+    a.logo(href='#')
+      img(src=require('../assets/svg/logo.svg'), alt='logo')
+    nav.nav.header__nav
+      ul.nav__list.list-reset
+        li.nav__item
+          a.nav__link(href='#') About Us
+        li.nav__item
+          a.nav__link(href='#') Services
+        li.nav__item
+          a.nav__link(href='#') Work
+        li.nav__item
+          a.nav__link(href='#') News
+        li.nav__item
+          a.nav__link(href='#') Contacts
+    .header-contacts
+      a.header-contacts__link.contacts-link.contacts-link--call(href='tel:4055550128')
+        span.contacts-link__caption Call us
+        span.contacts-link__value (405) 555-0128
+      a.header-contacts__link.contacts-link.contacts-link--mail(href='mailto:hello@createx.com')
+        span.contacts-link__caption Talk to us
+        span.contacts-link__value hello@createx.com

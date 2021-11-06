@@ -1,5 +1,4 @@
 const Path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 module.exports = {
@@ -22,10 +21,6 @@ module.exports = {
 		},
 	},
 	plugins: [
-		//new CopyWebpackPlugin({ patterns: [{ from: Path.resolve(__dirname, '../src/assets/icon'), to: '../build/img' }] }),
-		// new HtmlWebpackPlugin({
-		// 	template: Path.resolve(__dirname, '../src/index.html'),
-		// }),
 		new HtmlWebpackPlugin({
 			template: Path.resolve(__dirname, '../src/index.pug'),
 			filename: 'index.html',
@@ -45,6 +40,14 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.html$/i,
+				loader: "html-loader",
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif|json|woff2|mp4)$/i,
+				type: 'asset/resource',
+			},
+			{
 				test: /\.mjs$/,
 				include: /node_modules/,
 				type: 'javascript/auto',
@@ -54,7 +57,6 @@ module.exports = {
 				loader: 'pug-loader',
 				options: {
 					pretty: true,
-					//esModule: false,
 				}
 			},
 		],

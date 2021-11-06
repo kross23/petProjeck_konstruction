@@ -39,14 +39,7 @@ module.exports = merge(common, {
 				test: /\.s?css/i,
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
 			},
-			{
-				test: /\.html$/i,
-				loader: "html-loader",
-			},
-			{
-				test: /\.(png|svg|jpg|jpeg|gif|json)$/i,
-				type: 'asset/resource',
-			},
+
 		],
 	},
 });
