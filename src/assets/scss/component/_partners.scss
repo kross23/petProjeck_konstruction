@@ -1,0 +1,19 @@
+.partners{
+    padding-top: 8rem;
+    background-color: var(--color-athens)f7;
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 10.2rem;
+        padding-top: 3.5rem;
+    }
+    &__item{
+
+    }
+    &__logo{
+
+    }
+    &__link{
+
+    }
+}

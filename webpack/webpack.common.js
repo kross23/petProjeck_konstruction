@@ -4,10 +4,12 @@ const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 module.exports = {
 	entry: {
 		app: Path.resolve(__dirname, '../src/js/main.js'),
+		services: Path.resolve(__dirname, '../src/js/services.js'),
 	},
 	output: {
 		path: Path.join(__dirname, '../build'),
-		filename: 'js/[name].js',
+		//filename: 'js/[name].js',
+		filename: "[name].entry.js",
 		clean: true,
 	},
 	stats: {
@@ -15,6 +17,7 @@ module.exports = {
 		children: true
 	},
 	optimization: {
+		runtimeChunk: true,
 		splitChunks: {
 			chunks: 'all',
 			name: false,
@@ -23,9 +26,18 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: Path.resolve(__dirname, '../src/index.pug'),
+			chunks:  ['app'],
 			filename: 'index.html',
+			inject: true,
 			minify: false
 		}),
+		new HtmlWebpackPlugin({
+			template: Path.resolve(__dirname, '../src/services.pug'),
+			chunks:  ['services'],
+			filename: './services/services.html',
+			inject: true,
+			minify: false
+		  }),
 		new HtmlWebpackPugPlugin({
 			adjustIndent: true
 		}),

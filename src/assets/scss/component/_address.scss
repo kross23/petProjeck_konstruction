@@ -1,0 +1,32 @@
+.footer-address{
+    margin-left: -2px;
+    &__title{
+        margin: 0;
+        
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        /* white */
+        color: var(--color-light);
+        padding-bottom: 13px;
+    }
+    &__item {
+      display: block;
+      margin-bottom: .5rem;
+    }
+    &__name{
+        padding-right: 5px;
+        font-size: 16px;
+        line-height: 160%;
+        color: var(--color-light);
+    }
+    a {
+        font-size: 16px;
+        line-height: 160%;
+        color: currentColor;
+        text-decoration: none;
+    }
+}

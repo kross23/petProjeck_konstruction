@@ -1,5 +1,5 @@
 .section-portfolio
-    .container 
+    .container
         .section-portfolio__top
             h2.title.section-portfolio__title Browse our selected projects and learn more about our work
             .slider-nav
@@ -7,4 +7,29 @@
                     include ../assets/svg/Left.svg   
                 button.btn-reset.slider-nav__btn.slider-btn.section-portfolio__next
                     include ../assets/svg/Right.svg
-                
+        .swiper.section-portfolio__items
+            .swiper-wrapper
+                .swiper-slide
+                    a(href="#").portfolio-item
+                        img(src=require("../assets/img/slider2.jpg"), alt="portfolio-cover").portfolio-item__image
+                        .portfolio-item__content
+                            h3.portfolio-item__title Red Finger Building
+                            span.portfolio-item__descr Business Centers
+                            .btn.btn--stroke.portfolio-item__btn View Project
+                .swiper-slide
+                    a(href="#").portfolio-item
+                        img(src=require("../assets/img/slider2.jpg"), alt="portfolio-cover").portfolio-item__image
+                        .portfolio-item__content
+                            h3.portfolio-item__title Cubes Building
+                            span.portfolio-item__descr Business Centers
+                            .btn.btn--stroke.portfolio-item__btn View Project
+                .swiper-slide
+                    a(href="#").portfolio-item
+                        img(src=require("../assets/img/slider3.jpg"), alt="portfolio-cover").portfolio-item__image
+                        .portfolio-item__content
+                            h3.portfolio-item__title The Pencil Building
+                            span.portfolio-item__descr Stores & Malls
+                            .btn.btn--stroke.portfolio-item__btn View Project                
+        .section-portfolio__bottom 
+            h4.services-section__subtitle Explore all our works
+            button.btn-reset.services-section__btn.btn.btn--fill View portfolio

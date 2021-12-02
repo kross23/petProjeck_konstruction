@@ -6,16 +6,17 @@ const common = require('./webpack.common.js');
 const PATHS = {
 	src: Path.join(__dirname, '../src'),
 	dist: Path.join(__dirname, '../dist'),
-	assets: Path.join(__dirname, '../src/assets')
-	
+	assets: Path.join(__dirname, '../src/assets'),
+	//services: Path.join(__dirname, '../dist/services'),
   };
 module.exports = merge(common, {
 	target: 'web',
 	mode: 'development',
 	devtool: 'eval-cheap-source-map',
 	output: {
-		chunkFilename: 'js/[name].chunk.js',
-		publicPath: '',
+		//chunkFilename: 'js/[name].chunk.js',
+		filename: "[name].entry.js",
+		publicPath: '/',
 	},
 	devServer: {
 		historyApiFallback: true,
@@ -53,6 +54,7 @@ module.exports = merge(common, {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				include: Path.resolve(__dirname, '../src'),
+				exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
 				loader: 'babel-loader',
 			},
 			{

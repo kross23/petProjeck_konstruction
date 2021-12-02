@@ -1,0 +1,23 @@
+section.contacts
+    h2.visually-hidden Contacts 
+    .container.contacts__container
+        form.contact-form.contacts__form
+            h3.contact-form__title A quick way to discuss details
+            label.form-field.contact-form__field.form-field--gray
+                span.form-field__caption Name*
+                input(type="text" name="name" placeholder="Your name").form-field__input
+            label.form-field.contact-form__field.form-field--gray
+                span.form-field__caption Phone*
+                input(type="tel" name="phone" placeholder="Your phone number").form-field__input
+            label.form-field.contact-form__field.form-field--gray
+                span.form-field__caption Email*
+                input(type="email" name="email" placeholder="Your email").form-field__input
+            label.form-field.contact-form__field.form-field--gray
+                span.form-field__caption Message*                                                 
+                textarea(type="text" name="message" placeholder="Your message").form-field__input.form-field__input--big
+            label.custom-checkbox.contact-form__checkbox
+                input(type="checkbox", name="checkbox").custom-checkbox__input
+                span.custom-checkbox__text I agree to receive communications from Createx Construction Bureau.
+            .centered
+                button(type="submit").contact-form__btn.btn.btn--fill send request
+        

@@ -24,7 +24,8 @@ module.exports = merge(common, {
 			'process.env.NODE_ENV': JSON.stringify('production'),
 		}),
 		new MiniCssExtractPlugin({
-			filename: './css/bundle.css',
+			//filename: './css/bundle.css',
+			filename: './css/[name].css',
 		}),
 	],
 

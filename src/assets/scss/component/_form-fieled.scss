@@ -2,20 +2,29 @@
     &__field{
         @include flex-column-start;
 
+    } 
+}
+.form-field{
+    @include flex-column-start;
+    &--big{
+      flex-grow: 2;
+      .form-field__input{
+          width: 100%;
+      }
     }
-    .form-field{
-        &--big{
-          flex-grow: 2;
-          .form-field__input{
-              width: 100%;
-          }
+    &--gray{
+        width: 100%;
+        .form-field__input{
+            width: 100%;
+            background: var(--color-athens);
         }
-
-        &__caption{
-            font-size: 1.4rem;
-            line-height: 150%;
-            color: var(--color-gray);
-        }
+    }
+    &__caption{
+        font-size: 1.4rem;
+        line-height: 150%;
+        color: var(--color-gray);
+        padding-bottom: 7px;
+    }
     &__input{
         background-color: #d7d7d7;
         border:1px solid #D7DADD ;
@@ -26,13 +35,16 @@
         border-radius: .4rem;
         padding-left: 1.6rem;
         text-transform: lowercase;
-        &::placeholder{
-            font-size: 14px;
-            line-height: 150%;
-            
-      }
-    }
-
+        &--big{
+            padding-top: 1rem;
+            height: 6.6rem;
+            resize: none;  
+        }
+            &::placeholder{
+                font-size: 14px;
+                line-height: 150%;
+                
+        }
 
     }
 }

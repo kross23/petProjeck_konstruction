@@ -1,0 +1,130 @@
+.footer{ 
+    padding: 5rem;
+    padding-top: 8rem;
+    background: var(--color-ebony);
+    color: rgba( 255,255,255 , 0.6);
+
+    &__descr{
+        width: 495px;
+        font-size: 14px;
+        line-height: 150%;
+        padding-top: 0.8rem;
+    }
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        //grid-template-rows: repeat(3, 1fr);
+        gap:5rem;
+    }
+    &__left{
+        // display: flex;
+        // flex-wrap: wrap;
+        grid-column: 7 span;
+    }
+    &__top{
+     @include flex-v-center;
+    
+    }
+    &__address{
+        grid-column: 4 span;
+    }
+    &__nav{
+        display: flex;
+        grid-column: 8 span;
+    }
+    &__copyrigth{
+        grid-column: 12 span;
+        padding-top: 5px;
+        font-size: 12px;
+        line-height: 150%;
+        vertical-align:text-top;
+        height: 100%;
+        span{
+            margin-left: 4px;
+            padding-left: 21px;
+            background-image: url(./../svg/Heart.svg);
+            background-position: left center;
+            background-size: 16px 16px;
+            background-repeat: no-repeat;
+
+        }
+    }
+}
+.footer-form{
+   // min-width: 496px;
+    grid-column: 4 span;
+    position: relative;
+    margin-left: -13px;
+    padding-top: 5px;
+    &__subtitle{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        color: var(--color-light);
+        margin: 0;
+        padding-bottom: 20px;
+    }
+    &__input{
+        height: 44px;
+        width: 495px;
+        border-radius: 4px;
+
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        //box-sizing: border-box;
+       
+    }
+    &__btn{
+        position: absolute;  
+         top: 61px;
+        right: 0px;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 1.11rem 2.5rem;
+    }
+    &__field{
+        margin-bottom: 1.5rem;
+    }
+    &__descr{
+        font-size: 12px;
+        line-height: 150%;
+        margin: 0;
+    }
+
+}
+.footer-nav{
+    display: flex;
+    &__col{
+        &:first-child{
+            padding-left: 4.6rem;
+        }  
+        &:last-child{
+            padding-left: 12.5rem;
+        }
+    }
+
+    
+    &__title{
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 150%;
+    
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--color-light);
+        color: #FFFFFF;
+    }
+    &__list{
+        padding-top: 1.7rem;
+    }
+    &__item{
+       &:not(:first-child){
+        padding-top: 1.2rem;
+       }
+    }
+    &__link{
+        color: currentColor;
+    }
+}

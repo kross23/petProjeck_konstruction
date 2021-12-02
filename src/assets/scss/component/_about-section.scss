@@ -1,4 +1,13 @@
 .about-section{
     background-color: var(--color-light);
     padding-bottom: 6rem;
+    &__title{
+        margin: 0;
+        font-weight: 700;
+        font-size: 46px;
+        line-height: 130%;
+        padding-bottom: 2.4rem;
+    }
+   
+
 }

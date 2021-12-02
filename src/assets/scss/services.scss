@@ -1,0 +1,23 @@
+@import "~normalize-scss/sass/normalize";
+@import './mixins';
+@import './setings';
+//@import './fonts';
+@import './fonts/font.scss';
+@import './vars';
+// большие компоненты
+@import './component/header';
+@import './component/hero';
+@import './component/page-hero';
+@import './component/contact-section';
+@import './component/footer';
+@import './component/services-content';
+
+// малые компоненты
+@import './component/nav';
+@import './component/header-contacts';
+@import './component/breadcrumbs';
+@import './component/form-fieled';
+@import './component/footer-listicks';
+@import './component/address';
+//@import './footer.scss';
+

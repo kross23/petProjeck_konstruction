@@ -1,0 +1,21 @@
+.footer-listicks{
+    display: flex;
+    align-items:center ;
+    margin-left: 6rem;
+    &__item{
+        &:not(:last-child){
+            margin-right: 1.4rem;
+        }
+    }
+    &__link{
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        svg{
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

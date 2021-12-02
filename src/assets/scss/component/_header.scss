@@ -2,14 +2,20 @@
 
 .header{
     padding-top: 2.3rem;
-    padding-bottom: 2.1rem;
+    //padding-bottom: 2.1rem;
     &__container{
         @include flex-all-sb;
     }
-    &--mail{
+    &--main{
     background-color: var(--color-ligth);  
     }
     &__nav{
         margin-left: -11.2rem;
+    }
+    &--secondary{
+       position: absolute;
+       left: 0;
+       top: 0;
+        width: 100%;
     }
 }

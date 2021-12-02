@@ -1,9 +1,106 @@
 .section-portfolio{
+ 
     background-color: var(--color-ligth);
+    padding: 11.6rem 0;
+ 
+  
     &__top{
-
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 4.8rem;
+        z-index: 10000;
     }
     &__title{
-        max-width: 71rem;
+        margin: 0;
+        padding-bottom: 1.2rem;
+        max-width: 70rem;
+    }
+    &__items{
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin: -100px !important;
+        padding: 100px !important;
+    
+        // margin: -100px ;
+        // padding: 100px ;
+        // .swiper-slide{
+        //     opacity: 0;
+        //   visibility: hidden;  
+        //   transition: opacity .3s ease-in-out , visibility .3s ease-in-out;
+        // }
+        .slider-visible{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__bottom {
+        padding-top: 8rem;
+        @include flex-all-center;
+        
+    }
+}
+.portfolio-item{ 
+   overflow: hidden;
+    
+    width: 39rem;
+   // height: 440px;
+    display: flex;
+    flex-direction: column;
+    border-radius: .4rem;
+    //position: relative;
+    border-radius: 4px;
+    background: var(--color-ligth);
+    box-shadow: 
+    0px 80px 80px -20px 
+    rgba(154, 156, 165, 0.08), 0px 30px 24px -10px 
+    rgba(154, 156, 165, 0.05), 0px 12px 10px -6px 
+    rgba(154, 156, 165, 0.04), 0px 4px 4px -4px 
+    rgba(30, 33, 44, 0.03);
+  
+    &__content{
+        @include flex-column-center;
+
+
+    }
+    &__image{
+        max-width: 390px;
+        max-height: 345px;
+        
+    }
+    &__title{
+       // text-align: c
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 150%;
+        color: var(--color-ebony);
+        margin: 0;
+        padding-top: 1.6rem;
+        padding-bottom: .4rem;
+    }
+    &__descr{
+        font-size: 1.4rem;
+        line-height: 150%;
+        text-align: center;
+        color: var(--color-gray);
+        display: block;
+        padding-bottom: 2.4rem;
+    }
+    &__btn{
+        display: none;
+       
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 4.4rem;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        padding-left: 3.2rem;
+        padding-right: 3.2rem;
+        color:var(--color-primary) ;
+        border: 1px solid var(--color-primary);
+        border-radius: 4px;
     }
 }

@@ -1,40 +1,63 @@
-footer 
-    .footer 
-        .footer-item
-            a(href="#")
-                img(src=require("../assets/svg/Logo1.svg"), alt="logo") 
-        .footer-item
-            ul.footer-list
-                li.footer-list__item
-                    a(href="#").footer-list__link Voice over and Subtitle
-                li.footer-list__item
-                    a(href="#").footer-list__link Media Center
-                li.footer-list__item
-                    a(href="#").footer-list__link Privacy
-                li.footer-list__item
-                    a(href="#").footer-list__link  Contact us
-        .footer-item
-            ul.footer-list
-                li.footer-list__item
-                    a(href="#").footer-list__link Voice Description
-                li.footer-list__item
-                    a(href="#").footer-list__link Investor Relations
-                li.footer-list__item
-                    a(href="#").footer-list__link Legal Provisions
-        .footer-item
-            ul.footer-list
-                li.footer-list__item
-                    a(href="#").footer-list__link Help Center
-                li.footer-list__item
-                    a(href="#").footer-list__link Job Opportunities
-                li.footer-list__item
-                    a(href="#").footer-list__link Cookies Preferences
-        .footer-item
-            ul.footer-list
-                li.footer-list__item
-                    a(href="#").footer-list__link Gift Cards
-                li.footer-list__item
-                    a(href="#").footer-list__link Terms of Use
-                li.footer-list__item
-                    a(href="#").footer-list__link PrivacyCorporate Informations
+footer.footer 
+    .container.footer__container   
+        .footer__left
+            .footer__top
+                a.logo(href='#')
+                    img(src=require('../assets/svg/footer-logo.svg'), alt='logo')
+                ul.list-reset.sociallistl.footer-listicks
+                    li.footer-listicks__item
+                        a.footer-listicks__link(href="#" target="_blank" aria-label="WhatsApp")
+                            include ../assets/svg/WhatsApp.svg
+                    li.footer-listicks__item
+                        a.footer-listicks__link(href="#" target="_blank" aria-label="Messenger")
+                            include ../assets/svg/Vector.svg
+                    li.footer-listicks__item
+                        a.footer-listicks__link(href="#" target="_blank" aria-label="Facebook")
+                            include ../assets/svg/Vector-1.svg
+                    li.footer-listicks__item
+                        a.footer-listicks__link(href="#" target="_blank" aria-label="Twitter")
+                            include ../assets/svg/Vector-2.svg
+                    li.footer-listicks__item
+                        a.footer-listicks__link(href="#" target="_blank" aria-label="Youtube")
+                            include ../assets/svg/youtube.svg 
+            p.footer__descr Createx Construction Bureau has been successfully operating in&nbsp;the USA construction market since 2000. We&nbsp;are proud to&nbsp;offer you quality construction and exemplary service. Our mission is&nbsp;to&nbsp;set the highest standards for construction sphere.
+        form(action="#").footer-form
+            h3.footer-form__subtitle Let&rsquo;s stay in&nbsp;touch
+            label.form-field.form-field--gray.footer-form__field
+                input(type="email" name="email" placeholder="Your email address").footer-form__input
+            button.btn-reset.footer-form__btn.btn.btn--fill subscribe
+            p.footer-form__descr *Subscribe to&nbsp;our newsletter to&nbsp;receive communications and early updates from Createx Construction Bureau.
+        address.footer-address.footer__address
+            h3.footer-address__title head Office
+            span.footer-address__item 
+                span.footer-address__name Address:
+                |8502 Preston Rd. Inglewood, New York
+            span.footer-address__item 
+                span.footer-address__name Call:
+                a(href="tel:4055550128") (405) 555-0128
+            span.footer-address__item 
+                span.footer-address__name Email:
+                a(href="mailto:hello@createx.com") hello@createx.com
+        nav(title="secondary navigation").footer__nav
+            .footer-nav__col
+                h3.footer-nav__title WHO WE ARE
+                ul.list-reset.footer-nav__list
+                    li.footer-nav__item
+                        a.footer-nav__link(href="#") About Us
+                    li.footer-nav__item
+                        a.footer-nav__link(href="#") Available Positions
+                    li.footer-nav__item
+                        a.footer-nav__link(href="#") Contacts
+            .footer-nav__col
+                h3.footer-nav__title OUR EXPERIENCE
+                ul.list-reset.footer-nav__list
+                    li.footer-nav__item
+                        a.footer-nav__link(href="#") Services
+                    li.footer-nav__item
+                        a.footer-nav__link(href="#") Work
+                    li.footer-nav__item
+                        a.footer-nav__link(href="#") News
+        small.footer__copyrigth
+                |&copy;&nbsp;All rights reserved. Made with
+                span by Createx Studio 
 
